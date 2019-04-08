@@ -32,16 +32,17 @@ export default class Message extends Component {
   render() {
     const { id, text, time, edit, remove } = this.props;
     const { editting } = this.state;
-    console.log( id, text );
+    console.log( userName );
     return (
       <div className="Message__container">
-        <span className="Message__time">{time}</span>
+        <span className="Message__time">{time} </span>
+        
         {
           editting
           ?
             <input className="Message__input" value={ this.state.text } onChange={ this.handleChange } onKeyPress={ this.edit } />
           :
-            <span className="Message__text">{text}</span>
+            <span className="Message__text">{text}{this.props.username}</span>
         }
         <span className="Message__edit" onClick={ () => this.setState({ editting: !this.state.editting, text }) }> <FaPencil /> </span>
         <span className="Message__delete" onClick={ () => remove( id ) }> <FaTrash /> </span>

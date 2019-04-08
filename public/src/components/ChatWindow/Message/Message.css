@@ -16,7 +16,8 @@
   top: 10px;
   left: 10px;
   font-size: 11px;
-  opacity: 0.5;
+  opacity: 0.9;
+  color: blue;
 }
 
 .Message__text {
